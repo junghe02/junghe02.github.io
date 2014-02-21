@@ -1,0 +1,55 @@
+
+
+html {
+    margin:0;
+    padding:0;
+    color:#000;
+    background:#a7a09a;
+}
+
+wrap {
+     width:750px;
+     margin:0 auto;
+     background:#99c;
+}
+
+.header {
+    background:#ddd;
+}
+
+.navigation {
+    background:#c99;
+}
+
+.navigation ul {
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+.navigation li {
+    display:inline;
+    margin:0;
+    padding:0;
+}
+
+.col1 {
+    height:200px;
+    background:#99c;
+}
+
+.col2 {
+    height:200px;
+    background:#DD0;
+}
+
+.col3 {
+    height:200px;
+    background:#DDD;
+}
+
+#footer {
+    clear:both;
+    backround:#c99;
+}
+

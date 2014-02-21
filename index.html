@@ -3,15 +3,18 @@
 <body>
 <head>
     <title>Henry Jungbauer homepage</title>
-    <link rel="stylesheet" href="homepage_2col_layout.css">
+    <link rel="stylesheet" href="homepage_2col_layout.css" type="text/css" title"charset="utf-8">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
 </head>
 <div id="wrap">
 
-  <div id="header"><h1>Henry Jungbauer</h1></div>
+  <div class="header col-cs-12 col-sm-12 col-m-12">
+  <h1>Henry Jungbauer</h1>
+  </div>
 
   <p>Hello! This is a page to visit if you want to know a little more about me.<p>
 
-    <div id="navigation">
+    <div class="navigation col-xs-12 col-sm-12 col-m-12">
 
       <ul>
 	<li><a href="henry_assign1_page2.html">Academics</a></li>
@@ -21,19 +24,29 @@
       </ul>
     </div>
 
-    <div id="col1">
+    <div class="col1 col-xs-12 col-sm-6 col-m-4">
       <p>My name is Henry Jungbauer and I am a junior at Luther College. I am currently pursuing a major in Computer Science along with Mathematics and Management minors. When I am not in class or doing homework, I dedicate a lot of my time to being a member of Luther College's Track and Field team. 
     </div>
 
-    <div id="col2">
-      <img src="track_pic.jpg" width="20%">
+    <div class="col2 col-xs-12 col-sm-6 col-m-4">
+      <img src="track_pic.jpg" width="80%">
     </div>
 
+    <div class="col3 col-xs-12 col-sm-6 col-m-4">
+      <p>Fun fact, I love cars. I enjoy reading about them, researching them, looking at them, and driving them. I know quite a bit about cars and spend way to much time thinking about cars I want or think I will buy if I have the means when I am older. Some of my dream cars are the Porsche 911 Turbo Cabriolet, the Audi S7, and the Lamborghini Murcielago LP40. 
+    </div>
+    
     <div id="footer">
       <p>Footer<p>
     </div>
 
 </div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed 
+    <script src="js/bootstrap.min.js"></script> -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 
 </body>
 </html>
