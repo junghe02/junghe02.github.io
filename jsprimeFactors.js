@@ -5,6 +5,7 @@ primeCheck = function() {
 	var count = 0
 	var resultFound = false
 	var input = document.getElementById("primeNum").value
+	var done = "<p>Prime factorization of " + input + "is: "
 
 	while(!isPrime(input)) {
 		while(count<primes.length && !resultFound) {
@@ -19,7 +20,9 @@ primeCheck = function() {
 		resultFound = false
 	}
 	finalPrimeList.push(input)
-	document.write(finalPrimeList)
+	//document.write(finalPrimeList)
+	done += finalPrimeList.toString() + "</p>"
+	document.getElementById("done").innerHTML = done
 }
 
 
