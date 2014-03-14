@@ -54,7 +54,7 @@ Queue = function() {
 	}
 
 	this.dequeue = function() {
-		var removed = new lst.splice(0,1)
+		var removed = lst.splice(0,1)
 		return removed[0]
 	}
 
@@ -96,7 +96,7 @@ getOneDifferents = function(word,wordList) {
             oneDifferents.push(wordList[i])
         }
 	}
-    return oneDifferents
+    return OneDifferents
 }
 
 
@@ -134,11 +134,11 @@ wordLadder = function() {
         var useList = threeLetterWords
 	}
 
-    else if (selectedWordLength == "fourLetterWords)" {
+    else if (selectedWordLength == "fourLetterWords") {
         var useList = fourLetterWords
     }
 
-    else (selectedWordLength == "fiveLetterWords") {
+    else {
         var useList = fiveLetterWords
     }
 
@@ -153,10 +153,10 @@ wordLadder = function() {
     var finished = false
     var found = false
 
-    while (!finished) :
+    while (!finished) {
     	var theStack = new queue.dequeue()
-        var topWord = new theStack.checkNext()
-        var nextWords = new getOneDifferents(topWord, useList)
+        var topWord = theStack.checkNext()
+        var nextWords = getOneDifferents(topWord, useList)
 
         for (var i = 0; i<nextWords.length; i++) {
         	var nextUsed = false
@@ -167,7 +167,7 @@ wordLadder = function() {
 				}
         	}
 
-            if (!in nextUsed) {
+            if (!nextUsed) {
                 usedWords.add(nextWords[i])
                 var newStack = theStack.copy()
                 newStack.pushOnto(nextWords[i])
@@ -186,5 +186,5 @@ wordLadder = function() {
             found = false
         }
             
-
+    }
 }
