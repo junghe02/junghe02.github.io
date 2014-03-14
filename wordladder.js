@@ -54,7 +54,7 @@ Queue = function() {
 	}
 
 	this.dequeue = function() {
-		var removed = new lst.splice(0,1)
+		var removed = lst.splice(0,1)
 		return removed[0]
 	}
 
