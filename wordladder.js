@@ -2,8 +2,17 @@ Stack = function() {
 
 	var lst = []
 
+	this.pushOnto = function(item) {
+		lst.push(item)
+		return
+	}
+ 
+	this.pop = function() {
+		return lst.pop()
+	}
+
 	this.checkNext = function() {
-		return lst[-1]
+		return lst[lst.length-1]
 	}
 
 	this.isEmpty = function() {
@@ -20,11 +29,12 @@ Stack = function() {
 	}
 
 	this.copy = function() {
-		newList = lst
-        newStack = Stack()
+		var newList = lst.slice(0)
+        var newStack = Stack()
 		
-        for (var item in newList)
-            newStack.push(item)
+        for (var i = 0; i < newList.length; i++) {
+            newStack.push(newList[i])
+        }
 
         return newStack
 	}
@@ -35,7 +45,80 @@ Stack = function() {
 }
 
 
+Queue = function() {
+	var lst = []
+
+	this.enqueue = function(item) {
+		lst.push(item)
+		return 
+	}
+
+	this.dequeue = function() {
+		var removed = new lst.splice(0,1)
+		return removed[0]
+	}
+
+	this.isEmpty = function() {
+
+		if (lst.length == 0) {
+            return true
+		}
+
+        else {
+            return false
+        }
+	}
+
+	this.size = function() {
+
+		return lst.length
+	}
+        
+}
+
+getOneDifferents = function(word,wordList) {
+
+	var OneDifferents = []
+
+	for (var i=0;i<wordList.length;i++) {
+
+        var sameCh = 0
+
+        for (var j=0;j<wordList[i].length;j++) {
+
+            if (wordList[i][j] == word[j]) {
+                sameCh += 1
+            }
+        }
+		
+        if (sameCh == word.length -1) {
+
+            oneDifferents.push(wordList[i])
+        }
+	}
+    return oneDifferents
+}
+
+
 set = function() {
+
+	var setList = []
+
+	this.add = function(item) {
+		setList.push(item)
+		return 
+	}
+
+	this.contains = function(item) {
+		var found = false
+		for (var i=0;i<setList.length;i++){
+			if (setList[i] = item) {
+				found = true
+			}
+		}
+		 return false
+	}
+
 
 }
 
@@ -48,49 +131,60 @@ wordLadder = function() {
 	var selectedWordLength = dropDown.options[dropDown.selectedIndex].value
 
 	if (selectedWordLength == "threeLetterWords") {
-        useList = threeLetterWords
+        var useList = threeLetterWords
 	}
 
     else if (selectedWordLength == "fourLetterWords)" {
-        useList = fourLetterWords
+        var useList = fourLetterWords
     }
 
     else (selectedWordLength == "fiveLetterWords") {
-        useList = fiveLetterWords
+        var useList = fiveLetterWords
     }
 
-    queue = new Queue()
-    stack = new Stack()
-    stack.push(startWord)
-    queue.push(stack)
+    var queue = new Queue()
+    var stack = new Stack()
+
+    stack.pushOnto(startWord)
+    queue.enqueue(stack)
     usedWordsList = new set()
     usedWordsList.add(startWord)
 
-    finished = false
+    var finished = false
+    var found = false
 
-    while (not finished) :
-        theStack = queue.pop()
-        topWord = theStack.checkNext()
-        //
-        nextWords = getOneDifferents(topWord, useList)
-        for (word in nextWords) {
-            if (word not in usedWords) {
-                usedWords.add(word)
-                newStack = currentStack.clone()
-                newStack.push(word)
-                if (word == endWord) {
-                    finished = True
-                    //found = True
+    while (!finished) :
+    	var theStack = new queue.dequeue()
+        var topWord = new theStack.checkNext()
+        var nextWords = new getOneDifferents(topWord, useList)
+
+        for (var i = 0; i<nextWords.length; i++) {
+        	var nextUsed = false
+
+        	for (var j = 0; j<usedWords.length; j++) {
+        		if (nextWords[i] == usedWords[j]) {
+					nextUsed = true;
+				}
+        	}
+
+            if (!in nextUsed) {
+                usedWords.add(nextWords[i])
+                var newStack = theStack.copy()
+                newStack.pushOnto(nextWords[i])
+
+                if (nextWords[i] == endWord) {
+                    finished = true
+                    found = true
                     finalList = []
-                    for (pos in range (newStack.size())){
-                        finalList.push(newStack.pop())
-                    }
+                    var finalList = newStack.show()
                 }
                 queue.enqueue(newStack)
             }
         }
-        if queue.size() == 0:
-            done = True
-            found = False
+        if (queue.size() == 0) {
+        	done = true
+            found = false
+        }
+            
 
 }
