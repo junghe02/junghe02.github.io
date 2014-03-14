@@ -138,7 +138,7 @@ wordLadder = function() {
         var useList = fourLetterWords
     }
 
-    else (selectedWordLength == "fiveLetterWords") {
+    else {
         var useList = fiveLetterWords
     }
 
