@@ -154,9 +154,9 @@ wordLadder = function() {
     var found = false
 
     while (!finished) {
-    	var theStack = new queue.dequeue()
-        var topWord = new theStack.checkNext()
-        var nextWords = new getOneDifferents(topWord, useList)
+    	var theStack = queue.dequeue()
+        var topWord = theStack.checkNext()
+        var nextWords = getOneDifferents(topWord, useList)
 
         for (var i = 0; i<nextWords.length; i++) {
         	var nextUsed = false
