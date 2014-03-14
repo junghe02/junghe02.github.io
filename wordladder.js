@@ -96,7 +96,7 @@ getOneDifferents = function(word,wordList) {
             oneDifferents.push(wordList[i])
         }
 	}
-    return oneDifferents
+    return OneDifferents
 }
 
 
