@@ -167,7 +167,7 @@ wordLadder = function() {
 				}
         	}
 
-            if (!in nextUsed) {
+            if (!nextUsed) {
                 usedWords.add(nextWords[i])
                 var newStack = theStack.copy()
                 newStack.pushOnto(nextWords[i])
