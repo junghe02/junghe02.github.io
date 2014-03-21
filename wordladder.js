@@ -187,6 +187,8 @@ wordLadder = function() {
         }
             
     }
+    
+    document.getElementById('wordladder output').innerHTML="wordladder"    
 
 }
 
